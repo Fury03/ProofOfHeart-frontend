@@ -41,7 +41,8 @@ test.describe("Creator Withdrawal Flow E2E Test", () => {
     // Step 3: Check for withdrawal action button or navigate directly to withdraw tab
     const withdrawBtn = page
       .getByRole("button", { name: /withdraw|claim/i })
-      .or(page.locator("body"));
+      .or(page.locator("body"))
+      .first();
     await expect(withdrawBtn).toBeVisible();
 
     // Step 4: Validate mock mode response and withdrawal UI readiness
